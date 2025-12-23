@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <!-- Sayfanın karakter seti (Türkçe karakterler için gerekli) -->
+    <meta charset="utf-8" />
+
+    <!-- Mobil cihazlarda responsive (duyarlı) görünüm sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Tarayıcı sekmesinde görünen başlık -->
+    <title>Ayyıldız Sk. Taekwondo</title>
+
+    <!-- Bootstrap 5 CSS: hazır tasarım ve responsive yapı -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  </head>
+
+  <body class="bg-light">
+
+    <!-- ===================== NAVBAR (ÜST MENÜ) ===================== -->
+    <!-- 
+      navbar: Bootstrap'in menü bileşeni
+      navbar-expand-lg: Large ekranlarda yatay, küçüklerde mobil menü
+      navbar-dark: Açık renk yazılar için
+      bg-dark: Koyu arkaplan rengi
+      bg-opacity-85: %85 opaklık
+      fixed-top: Sayfanın üstünde sabit durur, kaydırmada takip eder
+    -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-85 fixed-top "
+    >
+      <div class="container">
+        <!-- Logo / Site adı -->
+        <a class="navbar-brand" href="#">
+          <strong>Ayyıldız Sk.</strong><br />
+          <span class="small">Taekwondo & Sports</span>
+        </a>
+
+        <!-- 
+          Mobil menü açma butonu 
+          data-bs-toggle="collapse": Bootstrap collapse işlevini tetikler
+          data-bs-target="#menu": Hangi elementi açıp kapatacağını belirtir
+        -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menü linkleri -->
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Anasayfa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Hizmetler</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#trainers">Antrenörler</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#schedule">Program</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">İletişim</a>
+            </li>
+          </ul>
+
+          <!-- Rezervasyon butonu -->
+          <a href="#contact" class="btn btn-primary">Rezervasyon</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===================== HERO ALANI (ANA GÖRSEL) ===================== -->
+    <!-- 
+      py-5: Dikey padding (yukarıdan-aşağıya boşluk)
+      position-relative: Altındaki absolute elementin konumlandırma referansı
+      overflow-hidden: Taşan içeriği gizler
+    -->
+    <section class="py-5 text-dark position-relative overflow-hidden">
+      <!-- 
+        Arka plan resmi 
+        position-absolute: Normal akıştan çıkar, parent'ına göre konumlanır
+        w-100: Genişlik %100
+        h-100: Yükseklik %100
+        background-image: Arkaplan resmi (img/TAEKWONDOO.jpg dosyasına ihtiyaç var)
+        filter: brightness(0.6): Resmi %60 karanlık yapar, üzerindeki yazılar okunaklı olur
+      -->
+      <div
+        class="position-absolute top-0 start-0 w-100 h-100"
+        style="
+          background-image: url('img/TAEKWONDOO.jpg');
+          background-position: center;
+          background-size: cover;
+          filter: brightness(0.6);
+        "
+      ></div>
+
+      <!-- 
+        Üstte görünen yazılar 
+        position-relative: z-index çalışması için
+        z-index: 2: Arkaplan resminin (z-index:1) üzerinde görünmesini sağlar
+      -->
+      <div class="container py-5 position-relative" style="z-index: 2">
+        <div class="row align-items-center min-vh-75">
+          <!-- 
+            Sol taraftaki tanıtım yazısı 
+            col-lg-6: Large ekranlarda 6 kolon genişliği (12 kolonluk sistem)
+          -->
+          <div class="col-lg-6">
+            <h1 class="fw-bold text-white display-4 mb-4">
+              Profesyonel Tekvando & Spor Eğitimi
+            </h1>
+            <p class="text-white lead mb-4">
+              Bireysel antrenmanlar, grup antrenmanları ve çocuklara uygun
+              eğitimler
+            </p>
+            <div>
+              <a class="btn btn-primary btn-lg me-3" href="#services">
+                Hizmetler
+              </a>
+              <a class="btn btn-outline-light btn-lg" href="#contact">
+                Ücretsiz Deneme
+              </a>
+            </div>
+          </div>
+
+          <!-- Sağ taraf (boş bırakıldı) -->
+          <div class="col-lg-6"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HİZMETLER ===================== -->
+    <!-- 
+      id="services": Navbar'daki Hizmetler linkinin hedefi
+      bg-dark: Koyu arkaplan
+      bg-opacity-85: %85 opaklık
+    -->
+ <!-- Hizmetler Bölümü -->
+<section id="services" class="py-5 bg-dark bg-opacity-85">
+  
+  <!-- Başlık Alanı -->
+  <div class="container text-center mb-4">
+    <h2 class="text-white">Hizmetlerimiz</h2>
+    <p class="text-white">Tüm seviye ve yaş gruplarına uygun programlar.</p>
+  </div>
+
+  <!-- Kartların Bulunduğu Alan -->
+  <div class="container">
+    <div class="row g-4"> <!-- g-4: kartlar arası boşluk -->
+
+      <!-- Bireysel Dersler -->
+      <div class="col-md-4"> <!-- md ve üstü ekranlarda 3 kolon -->
+        <div class="card h-100 border-0 bg-transparent text-center">
+          
+          <!-- İkon Kutusu -->
+          <div 
+            class="mx-auto mb-3 d-flex align-items-center justify-content-center
+                   rounded-circle bg-primary text-white"
+            style="width:80px; height:80px;">
+            <!-- Bootstrap Icon -->
+            <i class="bi bi-person-fill fs-2"></i>
+          </div>
+
+          <!-- Kart Başlığı -->
+          <h5 class="text-primary">Bireysel Dersler</h5>
+
+          <!-- Kart Açıklaması -->
+          <p class="text-white small">
+            Kişiye özel performans geliştirme.
+          </p>
+        </div>
+      </div>
+
+      <!-- Grup Antrenmanları -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 bg-transparent text-center">
+          
+          <!-- İkon Kutusu -->
+          <div 
+            class="mx-auto mb-3 d-flex align-items-center justify-content-center
+                   rounded-circle bg-primary text-white"
+            style="width:80px; height:80px;">
+            <i class="bi bi-people-fill fs-2"></i>
+          </div>
+
+          <h5 class="text-primary">Grup Antrenmanları</h5>
+          <p class="text-white small">
+            Sosyal ve motive edici seanslar.
+          </p>
+        </div>
+      </div>
+
+      <!-- Çocuk Programları -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 bg-transparent text-center">
+          
+          <!-- İkon Kutusu -->
+          <div 
+            class="mx-auto mb-3 d-flex align-items-center justify-content-center
+                   rounded-circle bg-primary text-white"
+            style="width:80px; height:80px;">
+            <i class="bi bi-emoji-smile-fill fs-2"></i>
+          </div>
+
+          <h5 class="text-primary">Çocuk Programları</h5>
+          <p class="text-white small">
+            Eğlenceli eğitim modeli.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- ===================== ANTRENÖRLER ===================== -->
+    <!-- 
+      bg-primary: Mavi arkaplan
+      bg-opacity-25: %25 opaklık (açık mavi)
+    -->
+    <section id="trainers" class="py-5 bg-primary bg-opacity-25">
+      <div class="container text-center mb-4">
+        <h2>Antrenörlerimiz</h2>
+        <p class="text-muted">Deneyimli uzman kadromuz</p>
+      </div>
+
+      <div class="container">
+        <div class="row g-4">
+          <!-- Antrenör kartı -->
+          <div class="col-md-4">
+            <div class="card border-dark">
+              <div class="card-body text-center">
+                <h5 class="text-primary">İsmail Emir</h5>
+                <p class="text-muted small">Yardımcı Antrenör</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card border-dark">
+              <div class="card-body text-center">
+                <h5 class="text-primary">MertCan Canpolat</h5>
+                <p class="text-muted small">Baş Antrenör</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card border-dark">
+              <div class="card-body text-center">
+                <h5 class="text-primary">Can Yıldız</h5>
+                <p class="text-muted small">Performans Koçu</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROGRAM ===================== -->
+    <section id="schedule" class="py-5 bg-dark bg-opacity-85">
+      <div class="container">
+        <h3 class="text-white">Haftalık Program</h3>
+
+        <!-- 
+          Program listesi 
+          list-group: Bootstrap liste grubu bileşeni
+        -->
+        <ul class="list-group my-3">
+          <li class="list-group-item">09:00 — Yetişkin Grup</li>
+          <li class="list-group-item">12:00 — Bireysel Ders</li>
+          <li class="list-group-item">17:00 — Çocuk Programı</li>
+          <li class="list-group-item">19:00 — Akşam Antrenmanı</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== İLETİŞİM FORMU ===================== -->
+    <section id="contact" class="py-5 bg-primary bg-opacity-25">
+      <div class="container">
+        <h3>İletişim</h3>
+
+        <!-- 
+          İletişim formu 
+          row g-3: Form elemanları arasında dikey boşluk
+          col-md-6: Medium ekranlarda 6 kolon (2 eleman yan yana)
+        -->
+        <form class="row g-3 mt-2" method="POST" action="#">
+          <div class="col-md-6">
+            <input
+              type="text"
+              name="fullname"
+              class="form-control"
+              placeholder="Ad Soyad"
+              required
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="tel"
+              name="phone"
+              class="form-control"
+              placeholder="Telefon"
+              required
+            />
+          </div>
+          <div class="col-12">
+            <textarea
+              name="message"
+              class="form-control"
+              rows="4"
+              placeholder="Mesaj"
+              required
+            ></textarea>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Gönder</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <!-- 
+      bg-primary: Mavi arkaplan
+      text-white: Beyaz yazı rengi
+      py-4: Dikey padding (yukarıdan-aşağıya boşluk)
+    -->
+    <footer class="bg-primary text-white py-4">
+      <div class="container text-center">
+        © 2025 Ayyıldız Sk. Taekwondo Tüm Haklar Saklıdır
+      </div>
+    </footer>
+
+    <!-- 
+      Bootstrap JavaScript (menü, butonlar vs. için gerekli) 
+      Bootstrap bileşenlerinin (dropdown, modal, collapse vb.) çalışması için
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
