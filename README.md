@@ -65,7 +65,7 @@ Tasarım Özellikleri
 
 ---
 
-web site linki:
+web site linki: https://samedulusoy.github.io/final-s-nav-/
 
 
 
